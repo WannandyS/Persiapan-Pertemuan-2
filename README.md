@@ -1,0 +1,104 @@
+# Persiapan Pertemuan 2
+
+| Kriteria | Keterangan |
+|--|--|
+| **Anggota** | Donny Andrian       (23100002) <br/>Michella Anastasya  (23100007) <br/>Wannandy Suwandy    (23100008) |
+| **Prodi** | Sistem dan Informasi Teknologi |
+| **Mata Kuliah** | Pemrograman Berorientasi Objek II |
+
+<details>
+<summary>
+
+### 1. *Prototype Design Pattern*</summary>
+
+*Prototype pattern* adalah salah satu pola desain dalam kategori *Creational Pattern* yang digunakan untuk membuat objek baru dengan menduplikasi objek yang sudah ada. Pola ini memungkinkan pembuatan objek tanpa harus bergantung pada kelas spesifiknya.
+
+</details>
+
+<details>
+<summary>
+
+### 2.  Penggunaan *Prototype Pattern*</summary>
+
+*Prototype pattern* digunakan ketika proses pembuatan objek sangat mahal (misalnya membutuhkan banyak sumber daya atau waktu), setelah itu jika objek memiliki banyak konfigurasi yang kompleks dan ingin menghindari inisialisasi ulang dari awal dan pada saat ingin mengurangi ketergantungan pada `constructor` dan subkelas.
+
+</details>
+
+<details>
+<summary>
+
+### 3.  Kelebihan dan Kekurangan *Prototype Pattern*</summary>
+
+Kelebihan *prototype pattern* adalah meningkatkan performa dengan menghindari pembuatan objek dari nol, mengurangi kompleksitas kode dengan menghindari inisialisasi berulang dan memungkinkan pembuatan objek baru dengan sedikit modifikasi dari objek yang ada.
+
+Sedangkan kekurangan dari *prototype pattern* adalah membutuhkan implementasi metode `clone()`, yang bisa menjadi rumit jika objek memiliki referensi ke objek lain dan sulit digunakan jika objek memiliki banyak dependensi atau mengandalkan sumber daya eksternal.
+
+</details>
+
+<details>
+<summary>
+
+### 4.  Contoh Kode *Design Pattern Prototype* dalam *Java* dan Output yang Dihasilkan!
+</summary>
+
+Dalam bahasa pemrograman *Java*, *class-class* yang ingin mengimplementasikan *prototype pattern* harus mengimplementasikan interface yang bernama `Cloneable` dimana *interface* tersebut memiliki method `clone()` yang dapat menggandakan seluruh *object attribute* beserta isinya.
+
+Berikut merupakan sebagian contoh implementasi *Prototype Pattern* dalam *Java*:
+
+``` java
+public class AModel implements Cloneable {
+    @Override
+    public AModel clone() throws CloneNotSupportedException {
+        return (AModel) super.clone();
+    }
+}
+```
+Tanpa mengimplementasikan *interface* `Cloneable`, *class* `AModel` akan otomatis melemparkan *exception* berupa `CloneNotSupportedException` karena adanya satu *attribute* yang tidak mendukung/mengimplementasikan *interface* `Cloneable`.
+
+#### Contoh 2
+> Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [PrototypeExample2.java](PrototypeExample2.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
+
+```java
+// Prototype interface
+interface Shape {
+    Shape clone();  // Make a copy of itself
+    void draw();    // Draw the shape
+}
+
+
+// Concrete prototype
+class Circle implements Shape {
+    private String color;
+
+    // This creates a copy of the circle.
+    @Override
+    public Shape clone() {
+        return new Circle(this.color);
+    }
+}
+
+
+// Client code
+class ShapeClient {
+    private Shape shapePrototype;
+
+    // This method creates a new shape using the prototype.
+    public Shape createShape() {
+        return shapePrototype.clone();
+    }
+}
+
+// Main class: PrototypeExample2
+```
+
+Pada kelas utama, `PrototypeExample2`, kita membuat prototipe konkret (`circlePrototype`) yakni lingkaran merah. Kita kemudian membuat `ShapeClient` dan memberikannya prototipe lingkaran merah. *Client* menggunakan prototipe tersebut untuk membuat bentuk baru (`redCircle`) menggunakan metode `createShape()`. Terakhir, kita menggambar lingkaran merah yang baru dibuat menggunakan metode `draw()`.[^1]
+
+Adapun output yang diberikan setelah metode `draw()` dijalankan sebagai berikut.
+``` plaintext
+Drawing a red circle.
+```
+
+</details>
+
+### Daftar Pustaka
+[^1]: https://www.geeksforgeeks.org/prototype-design-pattern-in-java#4-complete-code-for-the-above-example
