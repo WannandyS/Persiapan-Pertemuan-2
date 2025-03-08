@@ -1,4 +1,4 @@
-﻿# Persiapan Pertemuan 2
+# Persiapan Pertemuan 2
 
 | Kriteria | Keterangan |
 |--|--|
@@ -57,4 +57,4 @@ Bird 2: This species of bird is Chicken
 ````
 
 #### Sumber
-https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
+https://www.avajava.com/tutorials/lessons/prototype-pattern.html
