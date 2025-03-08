@@ -61,7 +61,7 @@ class Bird implements Cloneable {
 
 Class Bird memiliki atribut species dan mengimplementasikan Cloneable, yang memungkinkan objek untuk diduplikasi melalui metode clone(). Metode clone() menggunakan super.clone() untuk membuat salinan objek. Karena super.clone() bisa melempar CloneNotSupportedException, maka digunakan blok try-catch untuk menangani kemungkinan error. Jika cloning gagal, metode akan menangkap exception dan mengembalikan null agar program tetap berjalan tanpa error.
 
-Dalam class PrototypeExample, objek Bird pertama (bird1) dibuat dengan species "Chicken", lalu duplikasi menjadi bird2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa bird2 adalah salinan dari bird1 dengan atribut yang sama.[^2]
+Dalam class PrototypeExample, objek Bird pertama (bird1) dibuat dengan species "Chicken", lalu duplikasi menjadi bird2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa bird2 adalah salinan dari bird1 dengan atribut yang sama.[^1]
 
 Adapun output yang diberikan setelah dijalankan sebagai berikut.
 
@@ -108,7 +108,7 @@ class ShapeClient {
 // Main class: PrototypeExample2
 ```
 
-Pada kelas utama, `PrototypeExample2`, kita membuat prototipe konkret (`circlePrototype`) yakni lingkaran merah. Kita kemudian membuat `ShapeClient` dan memberikannya prototipe lingkaran merah. *Client* menggunakan prototipe tersebut untuk membuat bentuk baru (`redCircle`) menggunakan metode `createShape()`. Terakhir, kita menggambar lingkaran merah yang baru dibuat menggunakan metode `draw()`.[^1]
+Pada kelas utama, `PrototypeExample2`, kita membuat prototipe konkret (`circlePrototype`) yakni lingkaran merah. Kita kemudian membuat `ShapeClient` dan memberikannya prototipe lingkaran merah. *Client* menggunakan prototipe tersebut untuk membuat bentuk baru (`redCircle`) menggunakan metode `createShape()`. Terakhir, kita menggambar lingkaran merah yang baru dibuat menggunakan metode `draw()`.[^2]
 
 Adapun output yang diberikan setelah metode `draw()` dijalankan sebagai berikut.
 ``` plaintext
@@ -118,5 +118,5 @@ Drawing a red circle.
 </details>
 
 ### Daftar Pustaka
-[^1]: https://www.geeksforgeeks.org/prototype-design-pattern-in-java#4-complete-code-for-the-above-example
-[^2]: https://www.avajava.com/tutorials/lessons/prototype-pattern.html
+[^1]: https://www.avajava.com/tutorials/lessons/prototype-pattern.html
+[^2]: https://www.geeksforgeeks.org/prototype-design-pattern-in-java#4-complete-code-for-the-above-example
