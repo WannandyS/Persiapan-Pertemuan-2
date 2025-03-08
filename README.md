@@ -15,24 +15,7 @@
 Sedangkan kekurangan dari prototype pattern adalah Mmmbutuhkan implementasi metode clone(), yang bisa menjadi rumit jika objek memiliki referensi ke objek lain dan sulit digunakan jika objek memiliki banyak dependensi atau mengandalkan sumber daya eksternal.
 
 
-4.  Buatkan contoh kodenya dalam java dan output yang dihasilkan!<br/>Jawaban : Dalam bahasa pemrograman Java, class-class yang ingin mengimplementasikan Prototype Pattern harus mengimplementasikan interface yang bernama **Cloneable** dimana interface tersebut memiliki method **clone()** yang dapat menggandakan seluruh object attribute beserta isinya. Berikut merupakan implementasi Prototype Pattern dalam java:<br/>
-```java
-public class AModel implements Cloneable {
-    @Override
-    public AModel clone() {
-        Amodel cloned;
-        try {
-            cloned = (AModel) super.class();
-        } catch (CatchNotSupportedException e) {
-            cloned = new AModel("//atribut yang ada//");
-        }
-        return cloned
-    }
-}
-```
-<br/> 
-Tanpa mengimplementasikan interface Cloneable, class akan otomatis melemparkan exception berupa CloneNotSupportedException karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface Cloneable.
-
+4.  Buatkan contoh kodenya dalam java dan output yang dihasilkan!<br/>Jawaban :
 #### Contoh
 > Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [PrototypeExample.java](PrototypeExample.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
 
@@ -69,8 +52,8 @@ Dalam class ContohPrototype, objek Bird pertama (bird1) dibuat dengan species "C
 Adapun output yang diberikan setelah dijalankan sebagai berikut.
 
 ````java
-Unggas 1: Jenis unggas ini adalah Ayam       
-Unggas 2: Jenis unggas ini adalah Ayam
+Bird 1: This species of bird is Chicken
+Bird 2: This species of bird is Chicken
 ````
 
 #### Sumber
