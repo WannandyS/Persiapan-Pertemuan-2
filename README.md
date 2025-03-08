@@ -67,6 +67,7 @@ Dalam class ContohPrototype, objek Unggas pertama (unggas1) dibuat dengan jenis 
 <br/>
 <br/>
 Adapun output yang diberikan setelah dijalankan sebagai berikut.
+
 ````java
 Unggas 1: Jenis unggas ini adalah Ayam       
 Unggas 2: Jenis unggas ini adalah Ayam
