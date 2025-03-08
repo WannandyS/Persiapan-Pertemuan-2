@@ -1,4 +1,4 @@
-# Persiapan Pertemuan 2
+﻿# Persiapan Pertemuan 2
 
 | Kriteria | Keterangan |
 |--|--|
@@ -11,28 +11,59 @@
 
 ### 1. *Prototype Design Pattern*</summary>
 
-*Prototype pattern* adalah salah satu pola desain dalam kategori *Creational Pattern* yang digunakan untuk membuat objek baru dengan menduplikasi objek yang sudah ada. Pola ini memungkinkan pembuatan objek tanpa harus bergantung pada kelas spesifiknya.
+*Prototype pattern* adalah salah satu pola desain dalam kategori *creational pattern* yang digunakan untuk membuat objek baru dengan menduplikasi objek yang sudah ada. Dengan menggunakan *prototype pattern*, kita dapat membuat objek tanpa bergantung pada kelas spesifiknya.
+
+Pola ini sangat berguna dalam situasi di mana pembuatan objek baru dari awal membutuhkan biaya yang tinggi dalam hal sumber daya atau waktu. Dalam penerapannya, objek yang sudah ada disebut sebagai *prototype*, dan objek baru dibuat dengan menyalin *prototype* tersebut.
+
+Metode `clone()` sering digunakan untuk mengimplementasikan *prototype pattern*, di mana objek baru dibuat dengan menyalin semua properti dari objek yang sudah ada. Dengan cara ini, kita dapat menghindari inisialisasi ulang yang mahal dan mempercepat proses pembuatan objek.[^4]
 
 </details>
 
 <details>
 <summary>
 
-### 2.  Penggunaan *Prototype Pattern*</summary>
+### 2.  Penggunaan *prototype Pattern*</summary>
 
-*Prototype pattern* digunakan ketika proses pembuatan objek sangat mahal (misalnya membutuhkan banyak sumber daya atau waktu), setelah itu jika objek memiliki banyak konfigurasi yang kompleks dan ingin menghindari inisialisasi ulang dari awal dan pada saat ingin mengurangi ketergantungan pada `constructor` dan subkelas.
+*Prototype pattern* digunakan ketika pembuatan objek baru sangat mahal atau kompleks dan dapat dihindari dengan menduplikasi objek yang sudah ada. Berikut beberapa kasus di mana *prototype pattern* cocok digunakan:
+
+* Ketika proses pembuatan objek sangat mahal atau memakan banyak sumber daya. <br/>
+Contohnya, jika sebuah objek memiliki proses inisialisasi yang berat, seperti membaca data dari database atau melakukan perhitungan kompleks, maka lebih efisien untuk menduplikasi objek yang sudah ada daripada membuat objek baru dari nol.
+
+* Ketika objek memiliki banyak konfigurasi yang kompleks. <br/>
+Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau fitur tambahan seperti contoh, tombol dalam aplikasi yang bisa berbeda warna dan bentuk, atau karakter dalam game yang punya atribut unik. Kita bisa menggunakan satu *prototype* dasar dan melakukan *cloning* dengan sedikit modifikasi daripada membuat banyak *subclass* atau *constructor* yang berbeda.
+
+* Ketika ingin mengurangi ketergantungan pada *subclass* dan *constructor*.<br/> 
+Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, seperti dalam sistem kendaraan di mana mobil sport, mobil keluarga, dan mobil listrik dapat dibuat dari satu *prototype* dasar dan dimodifikasi sesuai kebutuhan. Hal ini juga berguna dalam *e-commerce*, di mana produk dapat memiliki variasi warna dan ukuran tanpa memerlukan kelas terpisah untuk setiap kombinasi.
+
+* Ketika objek perlu dibuat secara dinamis pada *runtime*
+Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hanya diketahui saat aplikasi berjalan. Jika setiap kali harus membuat objek baru dari nol, prosesnya bisa menjadi lambat dan tidak efisien. Dengan menggunakan *prototype pattern*, kita bisa menggandakan objek yang sudah ada tanpa harus mendefinisikan ulang struktur objek tersebut, yaitu susunan atribut dan metode yang membentuk objek. Dengan cara ini, kita tetap bisa menyesuaikan objek sesuai kebutuhan tanpa harus merancangnya ulang dari awal.[^4]
 
 </details>
 
 <details>
 <summary>
 
-### 3.  Kelebihan dan Kekurangan *Prototype Pattern*</summary>
+### 3.  Kelebihan dan Kekurangan *prototype Pattern*</summary>
 
-Kelebihan *prototype pattern* adalah meningkatkan performa dengan menghindari pembuatan objek dari nol, mengurangi kompleksitas kode dengan menghindari inisialisasi berulang dan memungkinkan pembuatan objek baru dengan sedikit modifikasi dari objek yang ada.
+Kelebihan *prototype pattern*:
+* Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret.
+* Menghindari kode duplikasi dalam proses inisialisasi objek.
+* Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.
+* Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.
 
-Sedangkan kekurangan dari *prototype pattern* adalah membutuhkan implementasi metode `clone()`, yang bisa menjadi rumit jika objek memiliki referensi ke objek lain dan sulit digunakan jika objek memiliki banyak dependensi atau mengandalkan sumber daya eksternal.
+Kekurangan *prototype pattern*:
+* *Cloning* bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi.
+* Memerlukan pemahaman mendalam tentang bagaimana objek dibuat dan dikloning.
+* Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien. [^3]
 
+Contoh : <br/>
+Misalkan dalam sebuah game, ada berbagai jenis karakter seperti *warrior, archer, dan mage*, yang memiliki atribut dasar yang hampir sama, seperti jumlah *health, attack power*, dan senjata yang digunakan. Namun, setiap karakter memiliki sedikit perbedaan dalam atributnya, seperti jenis senjata dan kekuatan serangan.
+
+Daripada membuat setiap karakter dari nol atau menggunakan banyak *subclass* untuk setiap jenis karakter, kita bisa menerapkan*prototype pattern*. Kita cukup membuat satu karakter dasar, misalnya *warrior*, lalu menggandakannya menggunakan metode *cloning* dan menyesuaikan beberapa atribut sesuai dengan jenis karakter yang diinginkan.
+
+Sebagai contoh, kita membuat objek dasar *warrior* dengan *health* 100, *attack power* 20, dan senjata *sword*. Kemudian, kita menggandakannya untuk membuat karakter *archer* dengan mengubah senjatanya menjadi *bow* dan mengurangi sedikit kekuatan serangannya. Begitu juga dengan karakter *mage*, yang memiliki senjata *staff* dan kekuatan serangan yang lebih tinggi dibandingkan *warrior*.
+
+Dengan cara ini, kita tidak perlu menulis ulang kode atau membuat banyak *subclass*, sehingga proses pembuatan karakter menjadi lebih efisien dan fleksibel.
 </details>
 
 <details>
@@ -120,3 +151,5 @@ Drawing a red circle.
 ### Daftar Pustaka
 [^1]: https://www.avajava.com/tutorials/lessons/prototype-pattern.html
 [^2]: https://www.geeksforgeeks.org/prototype-design-pattern-in-java#4-complete-code-for-the-above-example
+[^3]: https://refactoring.guru/design-patterns/prototype
+[^4]: https://www.geeksforgeeks.org/prototype-design-pattern/
