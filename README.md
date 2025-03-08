@@ -61,7 +61,7 @@ class Bird implements Cloneable {
 
 Class Bird memiliki atribut species dan mengimplementasikan Cloneable, yang memungkinkan objek untuk diduplikasi melalui metode clone(). Metode clone() menggunakan super.clone() untuk membuat salinan objek. Karena super.clone() bisa melempar CloneNotSupportedException, maka digunakan blok try-catch untuk menangani kemungkinan error. Jika cloning gagal, metode akan menangkap exception dan mengembalikan null agar program tetap berjalan tanpa error.
 
-Dalam class ContohPrototype, objek Bird pertama (bird1) dibuat dengan species "Chicken", lalu duplikasi menjadi bird2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa bird2 adalah salinan dari bird1 dengan atribut yang sama.
+Dalam class PrototypeExample, objek Bird pertama (bird1) dibuat dengan species "Chicken", lalu duplikasi menjadi bird2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa bird2 adalah salinan dari bird1 dengan atribut yang sama.
 
 Adapun output yang diberikan setelah dijalankan sebagai berikut.
 
@@ -119,4 +119,4 @@ Drawing a red circle.
 
 ### Daftar Pustaka
 [^1]: https://www.geeksforgeeks.org/prototype-design-pattern-in-java#4-complete-code-for-the-above-example
->>>>>>> 49746944b436dc4d48d6bcc056c067c82db8ff05
+[^2]: https://www.avajava.com/tutorials/lessons/prototype-pattern.html
