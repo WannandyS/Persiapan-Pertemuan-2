@@ -41,19 +41,36 @@ Sedangkan kekurangan dari *prototype pattern* adalah membutuhkan implementasi me
 ### 4.  Contoh Kode *Design Pattern Prototype* dalam *Java* dan Output yang Dihasilkan!
 </summary>
 
-Dalam bahasa pemrograman *Java*, *class-class* yang ingin mengimplementasikan *prototype pattern* harus mengimplementasikan interface yang bernama `Cloneable` dimana *interface* tersebut memiliki method `clone()` yang dapat menggandakan seluruh *object attribute* beserta isinya.
+#### Contoh 1
+> Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [PrototypeExample.java](PrototypeExample.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
 
-Berikut merupakan sebagian contoh implementasi *Prototype Pattern* dalam *Java*:
+```java
+class Bird implements Cloneable {
+    String species;
 
-``` java
-public class AModel implements Cloneable {
     @Override
-    public AModel clone() throws CloneNotSupportedException {
-        return (AModel) super.clone();
+    public Cloneable clone() {
+        try {
+            return(Bird) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
     }
 }
 ```
-Tanpa mengimplementasikan *interface* `Cloneable`, *class* `AModel` akan otomatis melemparkan *exception* berupa `CloneNotSupportedException` karena adanya satu *attribute* yang tidak mendukung/mengimplementasikan *interface* `Cloneable`.
+
+Class Bird memiliki atribut species dan mengimplementasikan Cloneable, yang memungkinkan objek untuk diduplikasi melalui metode clone(). Metode clone() menggunakan super.clone() untuk membuat salinan objek. Karena super.clone() bisa melempar CloneNotSupportedException, maka digunakan blok try-catch untuk menangani kemungkinan error. Jika cloning gagal, metode akan menangkap exception dan mengembalikan null agar program tetap berjalan tanpa error.
+
+Dalam class ContohPrototype, objek Bird pertama (bird1) dibuat dengan species "Chicken", lalu duplikasi menjadi bird2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa bird2 adalah salinan dari bird1 dengan atribut yang sama.
+
+Adapun output yang diberikan setelah dijalankan sebagai berikut.
+
+``` plaintext
+Bird 1: This species of bird is Chicken
+Bird 2: This species of bird is Chicken
+```
+
+---------------------------------------------------
 
 #### Contoh 2
 > Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [PrototypeExample2.java](PrototypeExample2.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
