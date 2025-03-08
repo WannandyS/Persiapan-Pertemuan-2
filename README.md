@@ -34,7 +34,7 @@ public class AModel implements Cloneable {
 Tanpa mengimplementasikan interface Cloneable, class akan otomatis melemparkan exception berupa CloneNotSupportedException karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface Cloneable.
 
 #### Contoh
-> Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [Unggas.java](Unggas.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
+> Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [PrototypeExample.java](PrototypeExample.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
 
 ````java
 class Bird implements Cloneable {
