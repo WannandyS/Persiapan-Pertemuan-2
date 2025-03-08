@@ -19,7 +19,7 @@ class Bird implements Cloneable {
     }
 }
 
-class PrototypeExample {
+public class PrototypeExample {
     public static void main(String[] args) {
         Bird bird1 = new Bird("Chicken");
         System.out.println("Bird 1: " + bird1);
