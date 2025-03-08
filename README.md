@@ -27,15 +27,15 @@ Metode `clone()` sering digunakan untuk mengimplementasikan *prototype pattern*,
 *Prototype pattern* digunakan ketika pembuatan objek baru sangat mahal atau kompleks dan dapat dihindari dengan menduplikasi objek yang sudah ada. Berikut beberapa kasus di mana *prototype pattern* cocok digunakan:
 
 * Ketika proses pembuatan objek sangat mahal atau memakan banyak sumber daya. <br/>
-Contohnya, jika sebuah objek memiliki proses inisialisasi yang berat, seperti membaca data dari database atau melakukan perhitungan kompleks, maka lebih efisien untuk menduplikasi objek yang sudah ada daripada membuat objek baru dari nol.
+Contohnya, jika sebuah objek memiliki proses inisialisasi yang berat, seperti membaca data dari *database* atau melakukan perhitungan kompleks, maka lebih efisien untuk menduplikasi objek yang sudah ada daripada membuat objek baru dari nol.
 
 * Ketika objek memiliki banyak konfigurasi yang kompleks. <br/>
-Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau fitur tambahan seperti contoh, tombol dalam aplikasi yang bisa berbeda warna dan bentuk, atau karakter dalam game yang punya atribut unik. Kita bisa menggunakan satu *prototype* dasar dan melakukan *cloning* dengan sedikit modifikasi daripada membuat banyak *subclass* atau *constructor* yang berbeda.
+Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau fitur tambahan lainnya, kita bisa menggunakan satu *prototype* dasar dan melakukan *cloning* dengan sedikit modifikasi daripada membuat banyak *subclass* atau *constructor* yang berbeda.
 
 * Ketika ingin mengurangi ketergantungan pada *subclass* dan *constructor*.<br/> 
 Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, seperti dalam sistem kendaraan di mana mobil sport, mobil keluarga, dan mobil listrik dapat dibuat dari satu *prototype* dasar dan dimodifikasi sesuai kebutuhan. Hal ini juga berguna dalam *e-commerce*, di mana produk dapat memiliki variasi warna dan ukuran tanpa memerlukan kelas terpisah untuk setiap kombinasi.
 
-* Ketika objek perlu dibuat secara dinamis pada *runtime*
+* Ketika objek perlu dibuat secara dinamis pada *runtime*. <br/>
 Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hanya diketahui saat aplikasi berjalan. Jika setiap kali harus membuat objek baru dari nol, prosesnya bisa menjadi lambat dan tidak efisien. Dengan menggunakan *prototype pattern*, kita bisa menggandakan objek yang sudah ada tanpa harus mendefinisikan ulang struktur objek tersebut, yaitu susunan atribut dan metode yang membentuk objek. Dengan cara ini, kita tetap bisa menyesuaikan objek sesuai kebutuhan tanpa harus merancangnya ulang dari awal.[^4]
 
 </details>
@@ -46,24 +46,25 @@ Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hany
 ### 3.  Kelebihan dan Kekurangan *prototype Pattern*</summary>
 
 Kelebihan *prototype pattern*:
-* Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret.
+* Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret. <br/>
+Contoh: Jika kita memiliki objek dokumen yang bisa berupa *PDF, word, atau excel*, kita bisa menggandakannya tanpa harus mengetahui detail kelasnya secara spesifik.
 * Menghindari kode duplikasi dalam proses inisialisasi objek.
-* Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.
-* Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.
+<br/>
+Contoh: Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke *database* atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol. <br/>
+* Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.<br/>
+Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.<br/>
+* Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.<br/>
+Contoh: Jika kita ingin membuat berbagai variasi mobil dengan sedikit perubahan fitur (misalnya warna atau jenis mesin), kita bisa menggandakan satu mobil dasar daripada membuat banyak *subclass*.<br/>
 
 Kekurangan *prototype pattern*:
-* *Cloning* bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi.
-* Memerlukan pemahaman mendalam tentang bagaimana objek dibuat dan dikloning.
-* Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien. [^3]
+* *Cloning* bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi. <br/>
+Contoh: Jika sebuah objek berisi referensi ke objek lain yang juga memiliki referensi kembali ke objek pertama, proses *cloning* bisa menyebabkan *loop* yang tidak diinginkan.
+* Memerlukan pemahaman mendalam tentang bagaimana objek dibuat dan dikloning. <br/>
+Contoh: Jika tidak dilakukan dengan benar, *cloning* bisa menghasilkan duplikasi yang tidak diharapkan atau kesalahan dalam data.
+* Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien. <br/>
+Contoh: Jika terlalu banyak objek yang dikloning tanpa pengelolaan yang baik, bisa terjadi pemborosan memori dan menurunkan performa aplikasi. [^3]
 
-Contoh : <br/>
-Misalkan dalam sebuah game, ada berbagai jenis karakter seperti *warrior, archer, dan mage*, yang memiliki atribut dasar yang hampir sama, seperti jumlah *health, attack power*, dan senjata yang digunakan. Namun, setiap karakter memiliki sedikit perbedaan dalam atributnya, seperti jenis senjata dan kekuatan serangan.
 
-Daripada membuat setiap karakter dari nol atau menggunakan banyak *subclass* untuk setiap jenis karakter, kita bisa menerapkan*prototype pattern*. Kita cukup membuat satu karakter dasar, misalnya *warrior*, lalu menggandakannya menggunakan metode *cloning* dan menyesuaikan beberapa atribut sesuai dengan jenis karakter yang diinginkan.
-
-Sebagai contoh, kita membuat objek dasar *warrior* dengan *health* 100, *attack power* 20, dan senjata *sword*. Kemudian, kita menggandakannya untuk membuat karakter *archer* dengan mengubah senjatanya menjadi *bow* dan mengurangi sedikit kekuatan serangannya. Begitu juga dengan karakter *mage*, yang memiliki senjata *staff* dan kekuatan serangan yang lebih tinggi dibandingkan *warrior*.
-
-Dengan cara ini, kita tidak perlu menulis ulang kode atau membuat banyak *subclass*, sehingga proses pembuatan karakter menjadi lebih efisien dan fleksibel.
 </details>
 
 <details>
