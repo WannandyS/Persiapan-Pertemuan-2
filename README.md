@@ -62,9 +62,10 @@ class Unggas implements Cloneable {
 <br/>
 Class Unggas memiliki atribut jenis dan mengimplementasikan Cloneable, yang memungkinkan objek untuk diduplikasi melalui metode clone(). Metode clone() menggunakan super.clone() untuk membuat salinan objek. Karena super.clone() bisa melempar CloneNotSupportedException, maka digunakan blok try-catch untuk menangani kemungkinan error. Jika cloning gagal, metode akan menangkap exception dan mengembalikan null agar program tetap berjalan tanpa error.
 <br/>
+<br/>
 Dalam class ContohPrototype, objek Unggas pertama (unggas1) dibuat dengan jenis "Ayam", lalu duplikasi menjadi unggas2 menggunakan clone(). Kedua objek kemudian ditampilkan, menunjukkan bahwa unggas2 adalah salinan dari unggas1 dengan atribut yang sama.
 <br/>
-
+<br/>
 Adapun output yang diberikan setelah dijalankan sebagai berikut.
 ````java
 Unggas 1: Jenis unggas ini adalah Ayam       
@@ -72,4 +73,4 @@ Unggas 2: Jenis unggas ini adalah Ayam
 ````
 
 #### Sumber
-https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
+[^1]https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
