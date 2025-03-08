@@ -57,4 +57,4 @@ Bird 2: This species of bird is Chicken
 ````
 
 #### Sumber
-[^1]: https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
+https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
