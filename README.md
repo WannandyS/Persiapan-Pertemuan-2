@@ -11,11 +11,11 @@
 
 ### 1. *Prototype Design Pattern*</summary>
 
-*prototype Pattern* adalah salah satu pola desain dalam kategori *creational Pattern* yang digunakan untuk membuat objek baru dengan menduplikasi objek yang sudah ada. Dengan menggunakan *prototype Pattern*, kita dapat membuat objek tanpa bergantung pada kelas spesifiknya.
+*Prototype Pattern* adalah salah satu pola desain dalam kategori *creational Pattern* yang digunakan untuk membuat objek baru dengan menduplikasi objek yang sudah ada. Dengan menggunakan *prototype Pattern*, kita dapat membuat objek tanpa bergantung pada kelas spesifiknya.
 
 Pola ini sangat berguna dalam situasi di mana pembuatan objek baru dari awal membutuhkan biaya yang tinggi dalam hal sumber daya atau waktu. Dalam penerapannya, objek yang sudah ada disebut sebagai prototype, dan objek baru dibuat dengan menyalin prototype tersebut.
 
-Metode `clone()` sering digunakan untuk mengimplementasikan *prototype Pattern*, di mana objek baru dibuat dengan menyalin semua properti dari objek yang sudah ada. Dengan cara ini, kita dapat menghindari inisialisasi ulang yang mahal dan mempercepat proses pembuatan objek.
+Metode `clone()` sering digunakan untuk mengimplementasikan *prototype Pattern*, di mana objek baru dibuat dengan menyalin semua properti dari objek yang sudah ada. Dengan cara ini, kita dapat menghindari inisialisasi ulang yang mahal dan mempercepat proses pembuatan objek.[^4]
 
 </details>
 
@@ -36,7 +36,7 @@ Jika ada banyak variasi dari suatu objek, kita bisa menggunakan satu prototype d
 Dengan menggunakan *prototype Pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, karena kita cukup membuat satu instance prototype dan menggandakannya.
 
 * Ketika objek perlu dibuat secara dinamis pada *runtime*
-Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hanya diketahui saat aplikasi berjalan. Dengan menggunakan *prototype Pattern*, kita bisa menggandakan objek yang sudah ada tanpa harus mendefinisikan ulang struktur objek tersebut.
+Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hanya diketahui saat aplikasi berjalan. Dengan menggunakan *prototype Pattern*, kita bisa menggandakan objek yang sudah ada tanpa harus mendefinisikan ulang struktur objek tersebut.[^4]
 
 </details>
 
@@ -54,7 +54,7 @@ Kelebihan *prototype pattern*:
 Kekurangan *prototype pattern*:
 * Cloning bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi.
 * Memerlukan pemahaman mendalam tentang bagaimana objek dibuat dan dikloning.
-* Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien.
+* Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien. [^3]
 
 </details>
 
