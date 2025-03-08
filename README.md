@@ -37,24 +37,24 @@ Tanpa mengimplementasikan interface Cloneable, class akan otomatis melemparkan e
 > Keseluruhan kode yang terdapat pada bagian ini dapat ditemukan pada [Unggas.java](Unggas.java). Kode yang terlampir pada bagian ini merupakan hanya sebagian yang menampilkan informasi penting terkait *prototype pattern*.
 
 ````java
-class Unggas implements Cloneable {
-    String jenis;
+class Bird implements Cloneable {
+    String species;
 
-    public Unggas(String jenis) {
-        this.jenis = jenis;
+    public Bird(String species) {
+        this.species = species;
     }
 
     @Override
     public Cloneable clone() {
         try {
-            return(Unggas) super.clone();
+            return(Bird) super.clone();
         } catch (CloneNotSupportedException e) {
             return null;
         }
     }
 
     public String toString() {
-        return "Jenis unggas ini adalah " + jenis;
+        return "This species of bird is " + species;
     }
 }
 
@@ -74,4 +74,4 @@ Unggas 2: Jenis unggas ini adalah Ayam
 ````
 
 #### Sumber
-[^1]https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
+[^1]: https://akmalrusli363.github.io/fla-design-patterns/Creational/Prototype.html
