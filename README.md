@@ -50,11 +50,11 @@ Kelebihan *prototype pattern*:
 Contoh: Jika kita memiliki objek dokumen yang bisa berupa *PDF, word, atau excel*, kita bisa menggandakannya tanpa harus mengetahui detail kelasnya secara spesifik.
 * Menghindari kode duplikasi dalam proses inisialisasi objek.
 <br/>
-Contoh: Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke *database* atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol. <br/>
+Contoh: Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke *database* atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol. 
 * Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.<br/>
-Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.<br/>
+Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.
 * Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.<br/>
-Contoh: Jika kita ingin membuat berbagai variasi mobil dengan sedikit perubahan fitur (misalnya warna atau jenis mesin), kita bisa menggandakan satu mobil dasar daripada membuat banyak *subclass*.<br/>
+Contoh: Jika kita ingin membuat berbagai variasi mobil dengan sedikit perubahan fitur (misalnya warna atau jenis mesin), kita bisa menggandakan satu mobil dasar daripada membuat banyak *subclass*.
 
 Kekurangan *prototype pattern*:
 * *Cloning* bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi. <br/>
