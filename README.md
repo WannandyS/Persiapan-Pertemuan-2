@@ -45,10 +45,8 @@ Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subcla
 Kelebihan *prototype pattern*:
 * Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret. <br/>
 Contoh: Ada boneka bernama Lala dengan baju merah. lalu kamu ingin boneka lain yang mirip, tapi dengan baju biru dan nama Lili. Daripada membuat boneka baru dari awal, kamu cukup menyalin Lala lalu mengubah namanya dan bajunya. Inilah yang dilakukan Prototype Pattern, yaitu menyalin objek tanpa perlu membuatnya dari nol.
-* Menghindari kode duplikasi dalam proses inisialisasi objek.<br/>
-Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke database atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol.
-* Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.<br/>
-Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.
+* Menghindari duplikasi  proses inisialisasi objek. <br/>
+Jika kita ingin membuat beberapa objek yang serupa, lebih baik menggunakan prototype pattern sehingga memungkinkan untuk menduplikasi objek secara langsung, daripada harus menginisiasi dari awal dengan constructor. Dengan demikian juga memudahkan pembuatan objek kompleks dengan banyak konfigurasi.
 * Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.<br/>
 Contoh: Jika kita ingin membuat berbagai variasi mobil dengan sedikit perubahan fitur (misalnya warna atau jenis mesin), kita bisa menggandakan satu mobil dasar daripada membuat banyak *subclass*.
 
