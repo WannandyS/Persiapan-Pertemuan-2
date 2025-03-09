@@ -36,7 +36,7 @@ Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau 
 Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, seperti dalam sistem kendaraan di mana mobil sport, mobil keluarga, dan mobil listrik dapat dibuat dari satu *prototype* dasar dan dimodifikasi sesuai kebutuhan. Hal ini juga berguna dalam *e-commerce*, di mana produk dapat memiliki variasi warna dan ukuran tanpa memerlukan kelas terpisah untuk setiap kombinasi.
 
 * Ketika objek perlu dibuat secara dinamis pada *runtime*. <br/>
-Dalam beberapa kasus, objek harus dibuat berdasarkan data atau keadaan yang hanya diketahui saat aplikasi berjalan. Jika setiap kali harus membuat objek baru dari nol, prosesnya bisa menjadi lambat dan tidak efisien. Dengan menggunakan *prototype pattern*, kita bisa menggandakan objek yang sudah ada tanpa harus mendefinisikan ulang struktur objek tersebut, yaitu susunan atribut dan metode yang membentuk objek. Dengan cara ini, kita tetap bisa menyesuaikan objek sesuai kebutuhan tanpa harus merancangnya ulang dari awal.[^4]
+Dalam beberapa kasus, kita mungkin tidak mengetahui jenis objek yang akan dibuat hingga program berjalan. Dengan prototype pattern, kita bisa membuat salinan objek yang sudah ada tanpa harus menentukan tipe spesifiknya sejak awal. Ini sangat berguna dalam aplikasi yang menangani banyak jenis data atau struktur objek yang fleksibel, seperti dalam sistem game development, di mana karakter atau item dapat dibuat secara dinamis berdasarkan kondisi permainan.[^4]
 
 </details>
 
