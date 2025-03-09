@@ -26,17 +26,14 @@ Metode `clone()` sering digunakan untuk mengimplementasikan *prototype pattern*,
 
 *Prototype pattern* digunakan ketika pembuatan objek baru sangat mahal atau kompleks dan dapat dihindari dengan menduplikasi objek yang sudah ada. Berikut beberapa kasus di mana *prototype pattern* cocok digunakan:
 
-* Ketika proses pembuatan objek sangat mahal atau memakan banyak sumber daya. <br/>
-Contohnya, jika sebuah objek memiliki proses inisialisasi yang berat, seperti membaca data dari *database* atau melakukan perhitungan kompleks, maka lebih efisien untuk menduplikasi objek yang sudah ada daripada membuat objek baru dari nol.
+* Ketika pembuatan objek mahal atau perlu dibuat secara dinamis pada *runtime*. <br/>
+Jika sebuah objek memerlukan proses inisialisasi yang berat, seperti membaca data dari database atau melakukan perhitungan kompleks, maka menduplikasi objek yang sudah ada lebih efisien daripada membuatnya dari nol. Selain itu, dalam beberapa kasus, jenis objek yang dibutuhkan mungkin baru diketahui saat program berjalan. Dengan *prototype pattern*, kita bisa membuat salinan objek yang sudah ada tanpa harus menentukan tipe spesifiknya sejak awal, seperti dalam game *development* atau sistem yang menangani banyak jenis data.
 
 * Ketika objek memiliki banyak konfigurasi yang kompleks. <br/>
 Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau fitur tambahan lainnya, kita bisa menggunakan satu *prototype* dasar dan melakukan *cloning* dengan sedikit modifikasi daripada membuat banyak *subclass* atau *constructor* yang berbeda.
 
 * Ketika ingin mengurangi ketergantungan pada *subclass* dan *constructor*.<br/> 
-Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, seperti dalam sistem kendaraan di mana mobil sport, mobil keluarga, dan mobil listrik dapat dibuat dari satu *prototype* dasar dan dimodifikasi sesuai kebutuhan. Hal ini juga berguna dalam *e-commerce*, di mana produk dapat memiliki variasi warna dan ukuran tanpa memerlukan kelas terpisah untuk setiap kombinasi.
-
-* Ketika objek perlu dibuat secara dinamis pada *runtime*. <br/>
-Dalam beberapa kasus, kita mungkin tidak mengetahui jenis objek yang akan dibuat hingga program berjalan. Dengan prototype pattern, kita bisa membuat salinan objek yang sudah ada tanpa harus menentukan tipe spesifiknya sejak awal. Ini sangat berguna dalam aplikasi yang menangani banyak jenis data atau struktur objek yang fleksibel, seperti dalam sistem game development, di mana karakter atau item dapat dibuat secara dinamis berdasarkan kondisi permainan.[^4]
+Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subclass* untuk membuat variasi objek, seperti dalam sistem kendaraan di mana mobil sport, mobil keluarga, dan mobil listrik dapat dibuat dari satu *prototype* dasar dan dimodifikasi sesuai kebutuhan. Hal ini juga berguna dalam *e-commerce*, di mana produk dapat memiliki variasi warna dan ukuran tanpa memerlukan kelas terpisah untuk setiap kombinasi.[^4]
 
 </details>
 
@@ -47,9 +44,8 @@ Dalam beberapa kasus, kita mungkin tidak mengetahui jenis objek yang akan dibuat
 
 Kelebihan *prototype pattern*:
 * Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret. <br/>
-Contoh: Jika kita memiliki objek dokumen yang bisa berupa *PDF, word, atau excel*, kita bisa menggandakannya tanpa harus mengetahui detail kelasnya secara spesifik.
+Contoh: Jika kita memiliki objek dokumen, bisa berjenis *PDF, word, atau excel*, kita bisa menggandakannya tanpa harus mengetahui detail kelasnya secara spesifik.
 * Menghindari kode duplikasi dalam proses inisialisasi objek.<br/>
-Contoh: Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke *database* atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol. 
 * Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.<br/>
 Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.
 * Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.<br/>
@@ -59,7 +55,6 @@ Kekurangan *prototype pattern*:
 * *Cloning* bisa menjadi rumit jika objek memiliki referensi silang atau siklus dependensi. <br/>
 Contoh: Jika sebuah objek berisi referensi ke objek lain yang juga memiliki referensi kembali ke objek pertama, proses *cloning* bisa menyebabkan *loop* yang tidak diinginkan.
 * Memerlukan pemahaman mendalam tentang bagaimana objek dibuat dan dikloning. <br/>
-Contoh: Jika tidak dilakukan dengan benar, *cloning* bisa menghasilkan duplikasi yang tidak diharapkan atau kesalahan dalam data.
 * Jika tidak dikelola dengan baik, bisa menyebabkan konsumsi memori yang tidak efisien. <br/>
 Contoh: Jika terlalu banyak objek yang dikloning tanpa pengelolaan yang baik, bisa terjadi pemborosan memori dan menurunkan performa aplikasi. [^3]
 
