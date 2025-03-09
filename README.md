@@ -27,7 +27,7 @@ Metode `clone()` sering digunakan untuk mengimplementasikan *prototype pattern*,
 *Prototype pattern* digunakan ketika pembuatan objek baru sangat mahal atau kompleks dan dapat dihindari dengan menduplikasi objek yang sudah ada. Berikut beberapa kasus di mana *prototype pattern* cocok digunakan:
 
 * Ketika pembuatan objek mahal atau perlu dibuat secara dinamis pada *runtime*. <br/>
-Jika sebuah objek memerlukan proses inisialisasi yang berat, seperti membaca data dari database atau melakukan perhitungan kompleks, maka menduplikasi objek yang sudah ada lebih efisien daripada membuatnya dari nol. Selain itu, dalam beberapa kasus, jenis objek yang dibutuhkan mungkin baru diketahui saat program berjalan. Dengan *prototype pattern*, kita bisa membuat salinan objek yang sudah ada tanpa harus menentukan tipe spesifiknya sejak awal, seperti dalam game *development* atau sistem yang menangani banyak jenis data.
+Contohnya, jika sebuah objek memiliki proses inisialisasi yang berat, seperti membaca data dari *database* atau melakukan perhitungan kompleks, maka lebih efisien untuk menduplikasi objek yang sudah ada daripada membuat objek baru dari nol. Hal ini memberi efek positif pada saat program dijalankan (*runtime*), yakni dapat meringankan beban kerja program.
 
 * Ketika objek memiliki banyak konfigurasi yang kompleks. <br/>
 Jika ada banyak variasi dari suatu objek, seperti perbedaan warna, ukuran, atau fitur tambahan lainnya, kita bisa menggunakan satu *prototype* dasar dan melakukan *cloning* dengan sedikit modifikasi daripada membuat banyak *subclass* atau *constructor* yang berbeda.
@@ -44,8 +44,9 @@ Dengan menggunakan *prototype pattern*, kita tidak perlu bergantung pada *subcla
 
 Kelebihan *prototype pattern*:
 * Bisa membuat salinan objek tanpa harus mengetahui kelasnya secara konkret. <br/>
-Contoh: Jika kita memiliki objek dokumen, bisa berjenis *PDF, word, atau excel*, kita bisa menggandakannya tanpa harus mengetahui detail kelasnya secara spesifik.
+Contoh: Ada boneka bernama Lala dengan baju merah. lalu kamu ingin boneka lain yang mirip, tapi dengan baju biru dan nama Lili. Daripada membuat boneka baru dari awal, kamu cukup menyalin Lala lalu mengubah namanya dan bajunya. Inilah yang dilakukan Prototype Pattern, yaitu menyalin objek tanpa perlu membuatnya dari nol.
 * Menghindari kode duplikasi dalam proses inisialisasi objek.<br/>
+Jika suatu objek membutuhkan banyak konfigurasi awal, seperti koneksi ke database atau pemuatan data besar, kita bisa menyalin objek yang sudah dikonfigurasi daripada membuat ulang dari nol.
 * Memudahkan pembuatan objek kompleks dengan banyak konfigurasi.<br/>
 Contoh: Dalam game, kita bisa menduplikasi karakter dasar lalu mengubah beberapa atributnya tanpa harus membuat ulang dari awal.
 * Alternatif yang lebih fleksibel dibandingkan pewarisan dalam kasus tertentu.<br/>
